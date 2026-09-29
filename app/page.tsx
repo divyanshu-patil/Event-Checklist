@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { overview, phases, type Phase, type Section } from './checklist';
+import { Tabs } from './tabs';
 
 type State = { sel: Record<string, true>; name: string; by: string };
 
@@ -83,7 +84,8 @@ export default function Page() {
       <div className="print:hidden">
         <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-2 px-4 py-3">
-            <div className="mr-auto">
+            <Tabs active="/" />
+            <div className="mr-auto pl-2">
               <h1 className="font-semibold">Hackathon Checklist</h1>
               <p className="text-sm text-zinc-500">
                 {total} of {allKeys.length} tasks selected for the report
